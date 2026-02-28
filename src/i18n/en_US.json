@@ -1,0 +1,12 @@
+{
+    "presentation": {
+        "position": "Systems administrator, network administrator and web developer."
+    },
+    "nav": {
+        "home": "Home",
+        "aboutMe": "About me",
+        "projects": "Projects",
+        "skills": "Skills",
+        "certifications": "Certifications"
+    }
+}

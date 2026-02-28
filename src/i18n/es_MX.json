@@ -1,0 +1,12 @@
+{
+    "presentation": {
+        "position": "Administrador de sistemas, redes y desarrollador web."
+    },
+    "nav": {
+        "home": "Inicio",
+        "aboutMe": "Acerca de mí",
+        "projects": "Proyectos",
+        "skills": "Habilidades",
+        "certifications": "Certificaciones"
+    }
+}

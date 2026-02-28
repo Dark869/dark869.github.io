@@ -1,20 +1,39 @@
 import NavBar from "@/components/NavBar";
 import Presentation from "@/components/Presentation";
+import Projects from "@/components/Projects";
 import AboutMe from "@/components/AboutMe";
+import Divider from "@/components/Divider";
+
+import { LanguageProvider } from "@/contexts/LanguageContext";
+
+const HomeStyles = {
+   projects: {
+      div: "h-full w-full flex aling-center justify-center my-16",
+   },
+};
 
 export default function Home() {
    return (
-      <>
-         <header>
-            <NavBar />
-         </header>
-         <main>
-            <Presentation />
-            <div className="bg-neutral-900/75 h-full">
-               <AboutMe />
-            </div>
-         </main>
-         <footer></footer>
-      </>
+      <LanguageProvider>
+         <div className="">
+            <header>
+               <NavBar />
+            </header>
+            <main>
+               <div>
+                  <Presentation />
+               </div>
+               <div
+                  className={`${HomeStyles.projects.div} bg-neutral-900 flex flex-col justify-center items-center`}
+                  id="projects"
+               >
+                  <Projects />
+                  <Divider />
+                  <AboutMe />
+               </div>
+            </main>
+            <footer className={HomeStyles.projects.div}></footer>
+         </div>
+      </LanguageProvider>
    );
 }

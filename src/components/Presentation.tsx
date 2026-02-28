@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import SocialMediaButton from "@/components/SocialMediaButtom";
+import { SocialMediaItem } from "@/types/SocialMedia";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const PresentationStyles = {
    DivPresentation: "pt-40 w-full font-sans",
@@ -13,7 +17,30 @@ const PresentationStyles = {
    imageOwner: "rounded-4xl w-90 h-90",
 };
 
+const SocialMedia: SocialMediaItem[] = [
+   {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/victorlopez95asd",
+      icon: "/svgs/linkedin.svg",
+      alt: "LinkedIn Icon",
+   },
+   {
+      name: "GitHub",
+      url: "https://github.com/Dark869/",
+      icon: "/svgs/github_dark.svg",
+      alt: "GitHub Icon",
+   },
+   {
+      name: "Email",
+      url: "mailto:ing.victor97@gmail.com",
+      icon: "/svgs/mail.svg",
+      alt: "Email Icon",
+   },
+];
+
 const Presentation = () => {
+   const { t } = useLanguage();
+
    return (
       <>
          <div className={PresentationStyles.DivPresentation}>
@@ -21,7 +48,7 @@ const Presentation = () => {
                <div className={PresentationStyles.presentationText}>
                   <h1 className={PresentationStyles.h1}>Victor López</h1>
                   <h2 className={`${PresentationStyles.h2} text-xl  italic`}>
-                     Administrador de sistemas, redes y desarrollador web.
+                     {t("presentation.position")}
                   </h2>
                   <h2
                      className={`${PresentationStyles.h2} text-md text-neutral-300`}
@@ -30,50 +57,20 @@ const Presentation = () => {
                      en la mejor solución posible.
                   </h2>
                   <div className="w-30 h-20 flex flext-row space-x-4 mt-4">
-                     <Link
-                        href="https://www.linkedin.com/in/victorlopez95asd"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                     >
-                        <Image
-                           src="/linkedin.svg"
-                           alt="LinkedIn"
-                           width={300}
-                           height={300}
-                           className=""
+                     {SocialMedia.map((socialMedia) => (
+                        <SocialMediaButton
+                           key={socialMedia.name}
+                           name={socialMedia.name}
+                           url={socialMedia.url}
+                           icon={socialMedia.icon}
+                           alt={socialMedia.alt}
                         />
-                     </Link>
-                     <Link
-                        href="https://github.com/Dark869/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                     >
-                        <Image
-                           src="/github_dark.svg"
-                           alt="Github"
-                           width={300}
-                           height={300}
-                           className=""
-                        />
-                     </Link>
-                     <Link
-                        href="mailto:ing.victor97@gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                     >
-                        <Image
-                           src="/mail.svg"
-                           alt="Instagram"
-                           width={300}
-                           height={300}
-                           className=""
-                        />
-                     </Link>
+                     ))}
                   </div>
                </div>
                <div className={PresentationStyles.presentationImage}>
                   <Image
-                     src="/photo.jpg"
+                     src="/images/photo.jpg"
                      alt="Foto de Victor López"
                      width={300}
                      height={300}
