@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import ButtonTec from "@/components/ButtonTec";
 import { TecItem, Project } from "@/types/Tecs";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /* ── Animaciones ── */
 const CAROUSEL_CSS = `
@@ -74,37 +75,39 @@ const technologiesCatalog: Record<string, TecItem> = {
    java: { name: "Java", src: "/svgs/java.svg", alt: "Java Icon" },
 };
 
-const test: Project[] = [
-   {
-      title: "Portfolio Web",
-      type: "Frontend",
-      description: "Portafolio personal desarrollado con Next.js y TypeScript",
-      image: "/images/portafolio.png",
-      url: "https://github.com/Dark869/portafolio-personal-web",
-      technologies: ["react", "next", "typescript", "tailwind"],
-   },
-   {
-      title: "Spring Backend",
-      type: "Backend",
-      description: "API Rest con Spring Boot y Java",
-      image: "/images/image.png",
-      url: "#",
-      technologies: ["java", "spring"],
-   },
-   {
-      title: "E-commerce App",
-      type: "Fullstack",
-      description:
-         "Aplicación de comercio electrónico completa con gestión de inventario",
-      image: "/images/image.png",
-      url: "#",
-      technologies: ["react", "node", "express", "typescript"],
-   },
-];
-
 type Direction = "left" | "right";
 
 const Carrusel = () => {
+   const { t } = useLanguage();
+
+   const test: Project[] = [
+      {
+         title: t("projects.portafolioProject.title"),
+         type: "Frontend",
+         description: t("projects.portafolioProject.description"),
+         image: "/images/portafolio.png",
+         url: "https://github.com/Dark869/portafolio-personal-web",
+         technologies: ["react", "next", "typescript", "tailwind"],
+      },
+      {
+         title: "Spring Backend",
+         type: "Backend",
+         description: "API Rest con Spring Boot y Java",
+         image: "/images/image.png",
+         url: "#",
+         technologies: ["java", "spring"],
+      },
+      {
+         title: "E-commerce App",
+         type: "Fullstack",
+         description:
+            "Aplicación de comercio electrónico completa con gestión de inventario",
+         image: "/images/image.png",
+         url: "#",
+         technologies: ["react", "node", "express", "typescript"],
+      },
+   ];
+
    const [currentlyIndex, setCurrentlyIndex] = useState(0);
    const [slideKey, setSlideKey] = useState(0);
    const [direction, setDirection] = useState<Direction>("left");

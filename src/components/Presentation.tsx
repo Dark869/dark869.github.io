@@ -53,8 +53,7 @@ const Presentation = () => {
                   <h2
                      className={`${PresentationStyles.h2} text-md text-neutral-300`}
                   >
-                     Perfecciono mis capacidades para convertir lo que imaginas
-                     en la mejor solución posible.
+                     {t("presentation.description")}
                   </h2>
                   <div className="w-30 h-20 flex flext-row space-x-4 mt-4">
                      {SocialMedia.map((socialMedia) => (
