@@ -7,13 +7,13 @@ interface ButtonTecProps {
 
 const ButtonTec = ({ tec }: ButtonTecProps) => {
    return (
-      <div className="flex items-center gap-2 border-2 border-neutral-600 px-3 py-1 rounded-md">
+      <div className="flex items-center gap-2 border-2 border-neutral-600 px-3 py-1 rounded-md w-auto h-auto">
          <Image
             src={tec.src}
             alt={tec.alt}
             width={20}
             height={20}
-            className=""
+            className="w-5 h-5 object-contain"
          />
          <p className="text-sm">{tec.name}</p>
       </div>

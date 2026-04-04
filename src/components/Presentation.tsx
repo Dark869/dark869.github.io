@@ -73,6 +73,7 @@ const Presentation = () => {
                      alt="Foto de Victor López"
                      width={300}
                      height={300}
+                     loading="eager"
                      className={PresentationStyles.imageOwner}
                   />
                </div>

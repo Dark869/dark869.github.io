@@ -5,6 +5,7 @@ import AboutMe from "@/components/AboutMe";
 import Divider from "@/components/Divider";
 
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import Skills from "@/components/Skills";
 
 const HomeStyles = {
    projects: {
@@ -30,6 +31,8 @@ export default function Home() {
                   <Projects />
                   <Divider />
                   <AboutMe />
+                  <Divider />
+                  <Skills />
                </div>
             </main>
             <footer className={HomeStyles.projects.div}></footer>

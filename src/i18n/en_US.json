@@ -22,5 +22,8 @@
         "descripption1": "Hello! I'm Victor Lopez. I'm 23 years old and I graduated with a degree in Networks and Computer Services from the University of Veracruz.",
         "descripption2": "My career began with a strong focus on systems administration, where I learned to understand technological infrastructure from its foundations. However, my curiosity for building solutions led me to web development. During my last year I have worked as a Full Stack developer, building applications with technologies like JavaScript and Node.js, and managing real deployments.",
         "descripption3": "Currently, I am self-studying Software Engineering to strengthen my architectural foundations. My big goal is to specialize as a DevOps engineer: I want to be the bridge that unites efficient code with robust, automated and scalable infrastructure. In addition, I am constantly learning, improving my technical English to open myself up to projects of global reach."
+    },
+    "skills": {
+        "title": "Skills"
     }
 }
