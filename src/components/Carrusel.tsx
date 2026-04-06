@@ -54,7 +54,7 @@ const technologiesCatalog: Record<string, TecItem> = {
    node: { name: "Node.js", src: "/svgs/nodejs.svg", alt: "Node.js Icon" },
    express: {
       name: "Express",
-      src: "/svgs/expressjs.svg",
+      src: "/svgs/express.svg",
       alt: "Express Icon",
    },
    typescript: {
