@@ -148,44 +148,44 @@ const Carrusel = () => {
       <>
          <style dangerouslySetInnerHTML={{ __html: CAROUSEL_CSS }} />
 
-         <div className="flex items-center justify-center gap-4 w-full">
+         <div className="flex items-center justify-center gap-1 sm:gap-2 md:gap-4 w-full px-2 sm:px-0">
             {/* ── Botón anterior ── */}
             <button
                type="button"
                onClick={prevCard}
                aria-label="Previous Slide"
-               className="px-4 py-2 rounded-full duration-200 hover:bg-neutral-800"
+               className="px-1 py-2 sm:px-2 md:px-4 rounded-full duration-200 hover:bg-neutral-800 flex-shrink-0"
             >
                <Image
                   src="/svgs/chevron-left.svg"
                   alt="Previous Slide"
-                  width={24}
-                  height={24}
-                  className="brightness-0 invert"
+                  width={20}
+                  height={20}
+                  className="brightness-0 invert w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
                />
             </button>
 
             {/* ── Área del slide ── */}
-            <div className="relative p-6 w-full max-w-4xl min-h-[400px] overflow-hidden">
+            <div className="relative p-2 sm:p-4 md:p-6 w-full max-w-4xl overflow-hidden min-h-[520px] sm:min-h-[550px] lg:min-h-[400px]">
                {/* key distinto → re-mount → animación se reinicia */}
                <div
                   key={slideKey}
-                  className={`flex flex-col-2 gap-4 min-h-[400px] ${enterClass}`}
+                  className={`flex flex-col lg:flex-row gap-3 sm:gap-4 h-full ${enterClass}`}
                >
                   {/* Columna izquierda — texto */}
-                  <div className="items-start flex flex-col justify-start gap-2 flex-1">
-                     <h2 className="c-text c-text-1 text-xl font-semibold mb-2 min-h-[32px]">
+                  <div className="items-start flex flex-col justify-start gap-1.5 sm:gap-2 flex-1">
+                     <h2 className="c-text c-text-1 text-lg sm:text-xl font-semibold mb-1 sm:mb-2">
                         {currentItem.title}
                      </h2>
-                     <h3 className="c-text c-text-2 text-lg font-medium text-sky-400 min-h-[28px]">
+                     <h3 className="c-text c-text-2 text-base sm:text-lg font-medium text-sky-400">
                         {currentItem.type}
                      </h3>
-                     <p className="c-text c-text-3 text-neutral-300 min-h-[48px]">
+                     <p className="c-text c-text-3 text-neutral-300 text-sm sm:text-base">
                         {currentItem.description}
                      </p>
 
                      {/* Tecnologías */}
-                     <div className="c-text c-text-4 flex flex-wrap gap-2 mt-2 min-h-[40px]">
+                     <div className="c-text c-text-4 flex flex-wrap gap-1.5 sm:gap-2 mt-1 sm:mt-2 mb-2 sm:mb-3">
                         {currentItem.technologies.map((techKey) => {
                            const tech = technologiesCatalog[techKey];
                            if (!tech) return null;
@@ -193,33 +193,49 @@ const Carrusel = () => {
                         })}
                      </div>
 
-                     {/* Enlace al repositorio */}
+                     {/* Enlace al repositorio - solo en lg+ */}
                      <Link
                         href={currentItem.url}
                         target="_blank"
-                        className="c-text c-text-5 flex items-center gap-2 border-2 border-neutral-600 px-4 py-2 rounded-md hover:bg-neutral-800 transition-colors mt-2"
+                        className="c-text c-text-5 hidden lg:flex items-center gap-2 border-2 border-neutral-600 px-4 py-2 rounded-md hover:bg-neutral-800 transition-colors text-base"
                      >
                         <Image
                            src="/svgs/github.svg"
                            alt="GitHub Icon"
                            width={20}
                            height={20}
-                           className="brightness-0 invert"
+                           className="brightness-0 invert w-5 h-5"
                         />
                         <p>Ver código</p>
                      </Link>
                   </div>
 
                   {/* Columna derecha — imagen */}
-                  <div className="c-image flex-shrink-0 ml-auto w-[450px] overflow-hidden content-center">
+                  <div className="c-image flex-shrink-0 w-full max-w-sm mx-auto lg:mx-0 lg:max-w-none lg:w-[450px] overflow-hidden">
                      <Image
                         height={350}
                         width={450}
                         src={currentItem.image}
                         alt={currentItem.title}
-                        className="object-cover border-3 border-neutral-600 rounded-lg"
+                        className="object-cover border-3 border-neutral-600 rounded-lg w-full h-auto"
                      />
                   </div>
+
+                  {/* Enlace al repositorio - solo en móvil/tablet */}
+                  <Link
+                     href={currentItem.url}
+                     target="_blank"
+                     className="c-text c-text-5 lg:hidden flex items-center justify-center gap-2 border-2 border-neutral-600 px-3 py-1.5 sm:px-4 sm:py-2 rounded-md hover:bg-neutral-800 transition-colors text-sm sm:text-base"
+                  >
+                     <Image
+                        src="/svgs/github.svg"
+                        alt="GitHub Icon"
+                        width={20}
+                        height={20}
+                        className="brightness-0 invert w-4 h-4 sm:w-5 sm:h-5"
+                     />
+                     <p>Ver código</p>
+                  </Link>
                </div>
             </div>
 
@@ -228,24 +244,24 @@ const Carrusel = () => {
                type="button"
                onClick={nextCard}
                aria-label="Next Slide"
-               className="px-4 py-2 rounded-full duration-200 hover:bg-neutral-800"
+               className="px-1 py-2 sm:px-2 md:px-4 rounded-full duration-200 hover:bg-neutral-800 flex-shrink-0"
             >
                <Image
                   src="/svgs/chevron-right.svg"
                   alt="Next Slide"
-                  width={24}
-                  height={24}
-                  className="brightness-0 invert"
+                  width={20}
+                  height={20}
+                  className="brightness-0 invert w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
                />
             </button>
          </div>
 
          {/* ── Dots ── */}
-         <div id="dotsIndicator">
+         <div id="dotsIndicator" className="mt-3 sm:mt-4">
             {test.map((_, index) => (
                <span
                   key={index}
-                  className={`mx-2 text-3xl cursor-pointer select-none transition duration-500 ${
+                  className={`mx-1.5 sm:mx-2 text-2xl sm:text-3xl cursor-pointer select-none transition duration-500 ${
                      index === currentlyIndex
                         ? "text-neutral-300"
                         : "text-neutral-600"

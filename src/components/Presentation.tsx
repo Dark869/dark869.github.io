@@ -6,15 +6,15 @@ import { SocialMediaItem } from "@/types/SocialMedia";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const PresentationStyles = {
-   DivPresentation: "pt-40 w-full font-sans",
+   DivPresentation: "pt-32 md:pt-32 lg:pt-40 w-full font-sans",
    containerPresentation:
-      "flex lg:w-3/6 flex-col lg:flex-row md:items-center max-w-6xl mx-auto px-8",
-   presentationText: "flex flex-col space-y-4 md:flex-1",
-   h1: "text-6xl font-bold text-left",
-   h2: "text-balance text-left",
+      "flex lg:w-3/6 flex-col lg:flex-row items-center max-w-6xl mx-auto px-4 sm:px-6 md:px-8 gap-6 md:gap-8 lg:gap-0",
+   presentationText: "flex flex-col space-y-3 md:space-y-4 md:flex-1 w-full",
+   h1: "text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-center lg:text-left",
+   h2: "text-balance text-center lg:text-left",
    presentationImage:
-      "flex justify-center md:justify-end md:flex-1 lg:order-last order-first",
-   imageOwner: "rounded-4xl w-90 h-90",
+      "flex justify-center lg:justify-end md:flex-1 lg:order-last order-first w-full lg:w-auto",
+   imageOwner: "rounded-4xl w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-[300px] lg:h-[300px]",
 };
 
 const SocialMedia: SocialMediaItem[] = [
@@ -47,15 +47,15 @@ const Presentation = () => {
             <div className={PresentationStyles.containerPresentation}>
                <div className={PresentationStyles.presentationText}>
                   <h1 className={PresentationStyles.h1}>Victor López</h1>
-                  <h2 className={`${PresentationStyles.h2} text-xl  italic`}>
+                  <h2 className={`${PresentationStyles.h2} text-lg sm:text-xl lg:text-xl italic`}>
                      {t("presentation.position")}
                   </h2>
                   <h2
-                     className={`${PresentationStyles.h2} text-md text-neutral-300`}
+                     className={`${PresentationStyles.h2} text-sm sm:text-base md:text-md lg:text-md text-neutral-300`}
                   >
                      {t("presentation.description")}
                   </h2>
-                  <div className="w-30 h-20 flex flext-row space-x-4 mt-4">
+                  <div className="w-full flex flex-row justify-center lg:justify-start space-x-3 sm:space-x-4 mt-4">
                      {SocialMedia.map((socialMedia) => (
                         <SocialMediaButton
                            key={socialMedia.name}

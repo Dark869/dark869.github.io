@@ -25,5 +25,14 @@
     },
     "skills": {
         "title": "Habilidades"
+    },
+    "footer": {
+        "tagline": "Estudiante de Redes y Servicios de Cómputo · Universidad Veracruzana",
+        "builtBy": "Diseñado y desarrollado por",
+        "builtWith": "Construido con",
+        "rights": "El código fuente de esta página es de mi autoría. Los íconos utilizados pertenecen a sus respectivos autores y se usan bajo sus licencias correspondientes."
+    },
+    "certifications": {
+        "title": "Certificaciones"
     }
 }

@@ -10,13 +10,14 @@ const SocialMediaButton = (socialMedia: SocialMediaItem) => {
             target="_blank"
             rel="noopener noreferrer"
             id={socialMedia.name}
+            className="hover:opacity-80 transition-opacity"
          >
             <Image
                src={socialMedia.icon}
                alt={socialMedia.alt}
-               width={300}
-               height={300}
-               className=""
+               width={40}
+               height={40}
+               className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
             />
          </Link>
       </>
