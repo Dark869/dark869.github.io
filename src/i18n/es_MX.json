@@ -1,6 +1,6 @@
 {
     "presentation": {
-        "position": "Administrador de sistemas, redes y desarrollador.",
+        "position": "Administrador de sistemas, redes y desarrollador de software.",
         "description": "Transformo la infraestructura tradicional combinando administración de sistemas con desarrollo de software para crear soluciones eficientes."
     },
     "nav": {
@@ -20,7 +20,7 @@
     "aboutMe": {
         "title": "Sobre mí",
         "descripption1": "¡Hola! Soy Víctor López. Tengo 23 años y soy egresado de la Licenciatura en Redes y Servicios de Cómputo por la Universidad Veracruzana.",
-        "descripption2": "Mi carrera comenzó con un fuerte enfoque en la administración de sistemas, donde aprendí a entender la infraestructura tecnológica desde sus cimientos. Sin embargo, mi curiosidad por construir soluciones me llevó al desarrollo web. Durante mi último año he trabajado como desarrollador Full Stack, construyendo aplicaciones con tecnologías como JavaScript y Node.js, y gestionando despliegues reales.",
+        "descripption2": "Mi carrera comenzó con un fuerte enfoque en la administración de sistemas, donde aprendí a entender la infraestructura tecnológica desde sus cimientos. Sin embargo, mi curiosidad por construir soluciones me llevó al desarrollo de software. Durante mi último año he trabajado como desarrollador Full Stack, construyendo aplicaciones con tecnologías como JavaScript y Node.js, y gestionando despliegues reales.",
         "descripption3": "Actualmente, estudio Ingeniería de Software por mi cuenta para fortalecer mis bases arquitectónicas. Mi gran objetivo es especializarme como ingeniero DevOps: quiero ser el puente que une el código eficiente con una infraestructura robusta, automatizada y escalable. Además, me mantengo en constante aprendizaje, perfeccionando mi inglés técnico para abrirme a proyectos de alcance global."
     },
     "skills": {
