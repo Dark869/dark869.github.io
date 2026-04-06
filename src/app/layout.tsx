@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-   title: "Victor López | Administrador de sistemas, redes y desarrollador web.",
-   description: "Administrador de sistemas, redes y desarrollador web.",
+   title: "Victor López | Administrador de sistemas, redes y desarrollador software.",
+   description: "Administrador de sistemas, redes y desarrollador de software.",
 };
 
 export default function RootLayout({

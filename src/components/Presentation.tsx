@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import SocialMediaButton from "@/components/SocialMediaButtom";
-import { SocialMediaItem } from "@/types/SocialMedia";
+import SocialMedia from "@/data/socialMedia";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SocialMediaItem } from "@/types/SocialMedia";
 
 const PresentationStyles = {
    DivPresentation: "pt-32 md:pt-32 lg:pt-40 w-full font-sans",
@@ -14,29 +15,9 @@ const PresentationStyles = {
    h2: "text-balance text-center lg:text-left",
    presentationImage:
       "flex justify-center lg:justify-end md:flex-1 lg:order-last order-first w-full lg:w-auto",
-   imageOwner: "rounded-4xl w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-[300px] lg:h-[300px]",
+   imageOwner:
+      "rounded-4xl w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-[300px] lg:h-[300px]",
 };
-
-const SocialMedia: SocialMediaItem[] = [
-   {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/victorlopez95asd",
-      icon: "/svgs/linkedin.svg",
-      alt: "LinkedIn Icon",
-   },
-   {
-      name: "GitHub",
-      url: "https://github.com/Dark869/",
-      icon: "/svgs/github_dark.svg",
-      alt: "GitHub Icon",
-   },
-   {
-      name: "Email",
-      url: "mailto:ing.victor97@gmail.com",
-      icon: "/svgs/mail.svg",
-      alt: "Email Icon",
-   },
-];
 
 const Presentation = () => {
    const { t } = useLanguage();
@@ -47,7 +28,9 @@ const Presentation = () => {
             <div className={PresentationStyles.containerPresentation}>
                <div className={PresentationStyles.presentationText}>
                   <h1 className={PresentationStyles.h1}>Victor López</h1>
-                  <h2 className={`${PresentationStyles.h2} text-lg sm:text-xl lg:text-xl italic`}>
+                  <h2
+                     className={`${PresentationStyles.h2} text-lg sm:text-xl lg:text-xl italic`}
+                  >
                      {t("presentation.position")}
                   </h2>
                   <h2
@@ -56,7 +39,7 @@ const Presentation = () => {
                      {t("presentation.description")}
                   </h2>
                   <div className="w-full flex flex-row justify-center lg:justify-start space-x-3 sm:space-x-4 mt-4">
-                     {SocialMedia.map((socialMedia) => (
+                     {SocialMedia.map((socialMedia: SocialMediaItem) => (
                         <SocialMediaButton
                            key={socialMedia.name}
                            name={socialMedia.name}
