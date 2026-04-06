@@ -26,13 +26,18 @@
     "skills": {
         "title": "Skills"
     },
-    "certifications": {
-        "title": "Certifications"
-    },
     "footer": {
         "tagline": "Networks and Computer Services Student · Universidad Veracruzana",
         "builtBy": "Designed and developed by",
         "builtWith": "Built with",
         "rights": "The source code of this page is my own work. Icons used belong to their respective authors and are used under their corresponding licenses."
-    }
+    },
+    "certifications": {
+    "title": "Certifications",
+    "issued": "Issued",
+    "expires": "Expires",
+    "noExpiry": "No expiry",
+    "credentialId": "ID:",
+    "verify": "Verify credential"
+}
 }

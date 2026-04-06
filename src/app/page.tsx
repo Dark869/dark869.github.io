@@ -3,6 +3,7 @@ import Presentation from "@/components/Presentation";
 import Projects from "@/components/Projects";
 import AboutMe from "@/components/AboutMe";
 import Divider from "@/components/Divider";
+import Certifications from "@/components/Certifications";
 import Footer from "@/components/Footer";
 
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -34,6 +35,8 @@ export default function Home() {
                   <AboutMe />
                   <Divider />
                   <Skills />
+                  <Divider />
+                  <Certifications />
                </div>
             </main>
             <footer className={HomeStyles.projects.div}>

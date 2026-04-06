@@ -33,6 +33,11 @@
         "rights": "El código fuente de esta página es de mi autoría. Los íconos utilizados pertenecen a sus respectivos autores y se usan bajo sus licencias correspondientes."
     },
     "certifications": {
-        "title": "Certificaciones"
-    }
+    "title": "Certificaciones",
+    "issued": "Expedido",
+    "expires": "Vence",
+    "noExpiry": "Sin vencimiento",
+    "credentialId": "ID:",
+    "verify": "Verificar credencial"
+}
 }
