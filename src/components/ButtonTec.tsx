@@ -1,9 +1,5 @@
 import Image from "next/image";
-import { TecItem } from "@/types/Tecs";
-
-interface ButtonTecProps {
-   tec: TecItem;
-}
+import { ButtonTecProps } from "@/types/buttonTecProps";
 
 const ButtonTec = ({ tec }: ButtonTecProps) => {
    return (

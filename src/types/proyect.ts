@@ -1,9 +1,3 @@
-interface TecItem {
-   name: string;
-   src: string;
-   alt: string;
-}
-
 interface Project {
    title: string;
    type: string;
@@ -13,4 +7,4 @@ interface Project {
    technologies: string[];
 }
 
-export type { TecItem, Project };
+export type { Project };

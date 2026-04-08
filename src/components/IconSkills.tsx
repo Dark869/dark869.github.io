@@ -1,10 +1,5 @@
-interface IconSkillsProps {
-   imageSrc: string;
-   altText: string;
-   bg: string;
-   border: string;
-   textColor: string;
-}
+import IconSkillsProps from "@/types/iconSkillsprops";
+
 const IconSkills = ({
    imageSrc,
    altText,
