@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import ButtonTec from "@/components/ButtonTec";
-import { TecItem } from "@/types/tecItem";
 import { Project } from "@/types/proyect";
 import { useLanguage } from "@/contexts/LanguageContext";
 import technologiesCatalog from "@/data/tecnologiesCatalog";
@@ -59,19 +58,29 @@ const Carrusel = () => {
    const test: Project[] = [
       {
          title: t("projects.portafolioProject.title"),
-         type: "Frontend",
+         type: "Fullstack",
          description: t("projects.portafolioProject.description"),
-         image: "/images/portafolio.png",
-         url: "https://github.com/Dark869/portafolio-personal-web",
-         technologies: ["react", "next", "typescript", "tailwind"],
+         image: "/images/projectFEI.png",
+         technologies: [
+            "react",
+            "next",
+            "javascript",
+            "tailwind",
+            "node",
+            "express",
+            "mysql",
+            "nginx",
+            "docker",
+         ],
       },
       {
-         title: "Spring Backend",
+         title: "Backend API con Spring Boot",
          type: "Backend",
-         description: "API Rest con Spring Boot y Java",
-         image: "/images/image.png",
-         url: "#",
-         technologies: ["java", "spring"],
+         description:
+            "API RESTful para gestión de usuarios con autenticación JWT",
+         image: "/images/projectAPI.png",
+         technologies: ["java", "spring", "hibernate", "postgresql", "jwt"],
+         url: "https://github.com/Dark869/Auth-REST-API",
       },
       {
          title: "E-commerce App",
@@ -79,8 +88,8 @@ const Carrusel = () => {
          description:
             "Aplicación de comercio electrónico completa con gestión de inventario",
          image: "/images/image.png",
-         url: "#",
          technologies: ["react", "node", "express", "typescript"],
+         url: "https://github.com/Dark869/Service-management-system",
       },
    ];
 
@@ -118,6 +127,10 @@ const Carrusel = () => {
    }, [nextCard]);
 
    const currentItem = test[currentlyIndex];
+   const hasPublicUrl =
+      !!currentItem.url &&
+      currentItem.url.trim().length > 0 &&
+      currentItem.url !== "#";
    const enterClass = direction === "left" ? "c-enter-right" : "c-enter-left";
 
    return (
@@ -170,20 +183,22 @@ const Carrusel = () => {
                      </div>
 
                      {/* Enlace al repositorio - solo en lg+ */}
-                     <Link
-                        href={currentItem.url}
-                        target="_blank"
-                        className="c-text c-text-5 hidden lg:flex items-center gap-2 border-2 border-neutral-600 px-4 py-2 rounded-md hover:bg-neutral-800 transition-colors text-base"
-                     >
-                        <Image
-                           src="/svgs/github.svg"
-                           alt="GitHub Icon"
-                           width={20}
-                           height={20}
-                           className="brightness-0 invert w-5 h-5"
-                        />
-                        <p>Ver código</p>
-                     </Link>
+                     {hasPublicUrl && (
+                        <Link
+                           href={currentItem.url!}
+                           target="_blank"
+                           className="c-text c-text-5 hidden lg:flex items-center gap-2 border-2 border-neutral-600 px-4 py-2 rounded-md hover:bg-neutral-800 transition-colors text-base"
+                        >
+                           <Image
+                              src="/svgs/github.svg"
+                              alt="GitHub Icon"
+                              width={20}
+                              height={20}
+                              className="brightness-0 invert w-5 h-5"
+                           />
+                           <p>Ver código</p>
+                        </Link>
+                     )}
                   </div>
 
                   {/* Columna derecha — imagen */}
@@ -198,20 +213,22 @@ const Carrusel = () => {
                   </div>
 
                   {/* Enlace al repositorio - solo en móvil/tablet */}
-                  <Link
-                     href={currentItem.url}
-                     target="_blank"
-                     className="c-text c-text-5 lg:hidden flex items-center justify-center gap-2 border-2 border-neutral-600 px-3 py-1.5 sm:px-4 sm:py-2 rounded-md hover:bg-neutral-800 transition-colors text-sm sm:text-base"
-                  >
-                     <Image
-                        src="/svgs/github.svg"
-                        alt="GitHub Icon"
-                        width={20}
-                        height={20}
-                        className="brightness-0 invert w-4 h-4 sm:w-5 sm:h-5"
-                     />
-                     <p>Ver código</p>
-                  </Link>
+                  {hasPublicUrl && (
+                     <Link
+                        href={currentItem.url!}
+                        target="_blank"
+                        className="c-text c-text-5 lg:hidden flex items-center justify-center gap-2 border-2 border-neutral-600 px-3 py-1.5 sm:px-4 sm:py-2 rounded-md hover:bg-neutral-800 transition-colors text-sm sm:text-base"
+                     >
+                        <Image
+                           src="/svgs/github.svg"
+                           alt="GitHub Icon"
+                           width={20}
+                           height={20}
+                           className="brightness-0 invert w-4 h-4 sm:w-5 sm:h-5"
+                        />
+                        <p>Ver código</p>
+                     </Link>
+                  )}
                </div>
             </div>
 

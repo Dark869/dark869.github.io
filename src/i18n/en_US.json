@@ -11,7 +11,8 @@
         "certifications": "Certifications"
     },
     "projects": {
-        "title": "Projects",
+        "title": "Featured Projects",
+        "seeMore": "See more projects",
         "portafolioProject": {
             "title": "Personal Portfolio",
             "description": "My personal portfolio, built with Next.js, Tailwind CSS and TypeScript."

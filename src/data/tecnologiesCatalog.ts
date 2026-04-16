@@ -25,6 +25,21 @@ const technologiesCatalog: Record<string, TecItem> = {
       alt: "Spring Boot Icon",
    },
    java: { name: "Java", src: "/svgs/java.svg", alt: "Java Icon" },
+   mysql: { name: "MySQL", src: "/svgs/mysql.svg", alt: "MySQL Icon" },
+   nginx: { name: "Nginx", src: "/svgs/nginx.svg", alt: "Nginx Icon" },
+   javascript: {
+      name: "JavaScript",
+      src: "/svgs/javascript.svg",
+      alt: "JavaScript Icon",
+   },
+   docker: { name: "Docker", src: "/svgs/docker.svg", alt: "Docker Icon" },
+   hibernate: {
+      name: "Hibernate",
+      src: "/svgs/hibernate.svg",
+      alt: "Hibernate Icon",
+   },
+   postgresql: {  name: "PostgreSQL", src: "/svgs/pgsql.svg", alt: "PostgreSQL Icon" },
+   jwt: { name: "JWT", src: "/svgs/jwt.svg", alt: "JWT Icon" },
 };
 
 export default technologiesCatalog;

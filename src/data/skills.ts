@@ -126,6 +126,20 @@
          textColor: "text-sky-400",
       },
       // {
+      //    name: "MongoDB",
+      //    icon: "/svgs/mongodb.svg",
+      //    bg: "bg-green-300/10",
+      //    border: "hover:border-green-300",
+      //    textColor: "text-green-300",
+      // },
+      // {
+      //    name: "Redis",
+      //    icon: "/svgs/redis.svg",
+      //    bg: "bg-red-400/10",
+      //    border: "hover:border-red-400",
+      //    textColor: "text-red-400",
+      // },
+      // {
       //    name: "Prisma",
       //    icon: "/svgs/prisma.svg",
       //    bg: "bg-blue-500/10",
@@ -139,12 +153,26 @@
          border: "hover:border-blue-500",
          textColor: "text-blue-500",
       },
+      // {
+      //    name: "Mongoose",
+      //    icon: "/svgs/mongoose.svg",
+      //    bg: "bg-green-300/10",
+      //    border: "hover:border-green-300",
+      //    textColor: "text-green-300",
+      // },
       {
          name: "Hibernate",
          icon: "/svgs/hibernate.svg",
          bg: "bg-green-500/10",
          border: "hover:border-green-500",
          textColor: "text-green-500",
+      },
+      {
+         name: "JWT",
+         icon: "/svgs/jwt.svg",
+         bg: "bg-yellow-400/10",
+         border: "hover:border-yellow-400",
+         textColor: "text-yellow-400",
       },
       {
          name: "Linux",

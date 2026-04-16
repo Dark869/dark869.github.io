@@ -3,7 +3,7 @@ interface Project {
    type: string;
    description: string;
    image: string;
-   url: string;
+   url?: string;
    technologies: string[];
 }
 

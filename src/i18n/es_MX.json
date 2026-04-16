@@ -11,10 +11,11 @@
         "certifications": "Certificaciones"
     },
     "projects": {
-        "title": "Proyectos",
+        "title": "Proyectos destacados",
+        "seeMore": "Ver más proyectos",
         "portafolioProject": {
-            "title": "Portafolio Personal",
-            "description": "Mi portafolio personal, construido con Next.js, Tailwind CSS y TypeScript."
+            "title": "Sistema de reservas y prestamos",
+            "description": "Un sistema completo para gestionar reservas de aulas y préstamos de recursos."
         }
     },
     "aboutMe": {

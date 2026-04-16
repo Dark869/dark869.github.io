@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Carrusel from "@/components/Carrusel";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -14,6 +15,12 @@ const Projects = () => {
             {t("projects.title")}
          </h1>
          <Carrusel />
+         <Link
+            href="/projects"
+            className="mt-8 px-6 py-3 bg-zinc-800 text-neutral-200 rounded-xl border border-zinc-700 hover:bg-zinc-700 duration-300 font-medium"
+         >
+            {t("projects.seeMore")}
+         </Link>
       </div>
    );
 };

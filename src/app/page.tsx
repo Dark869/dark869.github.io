@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect } from "react";
 import NavBar from "@/components/NavBar";
 import Presentation from "@/components/Presentation";
 import Projects from "@/components/Projects";
@@ -16,6 +19,25 @@ const HomeStyles = {
 };
 
 export default function Home() {
+   useEffect(() => {
+      // Detectar si hay hash en la URL al cargar
+      const hash = window.location.hash.substring(1); // Quitar el '#'
+      if (hash) {
+         setTimeout(() => {
+            const element = document.getElementById(hash);
+            if (element) {
+               const navbarHeight = 80;
+               const elementPosition =
+                  element.getBoundingClientRect().top + window.scrollY;
+               window.scrollTo({
+                  top: elementPosition - navbarHeight,
+                  behavior: "smooth",
+               });
+            }
+         }, 100); // Pequeño delay para asegurar que el DOM esté listo
+      }
+   }, []);
+
    return (
       <LanguageProvider>
          <div className="">
@@ -23,20 +45,27 @@ export default function Home() {
                <NavBar />
             </header>
             <main>
-               <div>
+               <section id="home">
                   <Presentation />
-               </div>
+               </section>
                <div
                   className={`${HomeStyles.projects.div} bg-neutral-900 flex flex-col justify-center items-center`}
-                  id="projects"
                >
-                  <Projects />
+                  <section id="projects">
+                     <Projects />
+                  </section>
                   <Divider />
-                  <AboutMe />
+                  <section id="about">
+                     <AboutMe />
+                  </section>
                   <Divider />
-                  <Skills />
+                  <section id="skills">
+                     <Skills />
+                  </section>
                   <Divider />
-                  <Certifications />
+                  <section id="certifications">
+                     <Certifications />
+                  </section>
                </div>
             </main>
             <footer className={HomeStyles.projects.div}>

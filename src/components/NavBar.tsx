@@ -1,43 +1,63 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const routes = {
-   Home: "/",
-   About: "about/",
-   Projects: "projects/",
-   Skills: "skills/",
-   Certifications: "certifications/",
+const sections = {
+   home: "home",
+   projects: "projects",
+   about: "about",
+   skills: "skills",
+   certifications: "certifications",
 };
 
 const NavBar = () => {
    const { language, toggleLanguage, t } = useLanguage();
    const [isOpen, setIsOpen] = useState(false);
+   const pathname = usePathname();
+   const router = useRouter();
 
    const navLinks = [
-      { label: t("nav.home"), href: routes.Home },
-      { label: t("nav.aboutMe"), href: routes.About },
-      { label: t("nav.projects"), href: routes.Projects },
-      { label: t("nav.skills"), href: routes.Skills },
-      { label: t("nav.certifications"), href: routes.Certifications },
+      { label: t("nav.home"), sectionId: sections.home },
+      { label: t("nav.projects"), sectionId: sections.projects },
+      { label: t("nav.aboutMe"), sectionId: sections.about },
+      { label: t("nav.skills"), sectionId: sections.skills },
+      { label: t("nav.certifications"), sectionId: sections.certifications },
    ];
+
+   const scrollToSection = (sectionId: string) => {
+      if (pathname === "/") {
+         const element = document.getElementById(sectionId);
+         if (element) {
+            const navbarHeight = 80;
+            const elementPosition =
+               element.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+               top: elementPosition - navbarHeight,
+               behavior: "smooth",
+            });
+         }
+      } else {
+         router.push(`/#${sectionId}`);
+      }
+      setIsOpen(false);
+   };
 
    return (
       <nav className="w-full z-10 fixed bg-neutral-900 font-sans">
          <div className="flex items-center justify-between px-[8%] py-5">
             <span className="text-neutral-200 font-semibold tracking-wide select-none"></span>
             <ul className="hidden md:flex flex-row gap-x-4 text-neutral-400 items-center">
-               {navLinks.map(({ label, href }) => (
-                  <li key={href}>
-                     <Link
-                        href={href}
-                        className="duration-300 hover:bg-zinc-700 hover:text-neutral-200 px-3 py-1 rounded-xl block"
+               {navLinks.map(({ label, sectionId }) => (
+                  <li key={sectionId}>
+                     <button
+                        onClick={() => scrollToSection(sectionId)}
+                        className="duration-300 hover:bg-zinc-700 hover:text-neutral-200 px-3 py-1 rounded-xl block cursor-pointer"
                      >
                         {label}
-                     </Link>
+                     </button>
                   </li>
                ))}
                <li>
@@ -80,15 +100,14 @@ const NavBar = () => {
             }`}
          >
             <ul className="flex flex-col px-[8%] pb-5 gap-y-1 text-neutral-400">
-               {navLinks.map(({ label, href }) => (
-                  <li key={href}>
-                     <Link
-                        href={href}
-                        className="block duration-300 hover:bg-zinc-700 hover:text-neutral-200 px-3 py-2 rounded-xl"
-                        onClick={() => setIsOpen(false)}
+               {navLinks.map(({ label, sectionId }) => (
+                  <li key={sectionId}>
+                     <button
+                        onClick={() => scrollToSection(sectionId)}
+                        className="block w-full text-left duration-300 hover:bg-zinc-700 hover:text-neutral-200 px-3 py-2 rounded-xl cursor-pointer"
                      >
                         {label}
-                     </Link>
+                     </button>
                   </li>
                ))}
                <li className="pt-1">
